@@ -1,0 +1,2 @@
+source C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader/gdbinit/symbols
+source C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader/gdbinit/connect
