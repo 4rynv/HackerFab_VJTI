@@ -1,4 +1,4 @@
-# Install script for directory: C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_gc9a01
+# Install script for directory: C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_gc9a01
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

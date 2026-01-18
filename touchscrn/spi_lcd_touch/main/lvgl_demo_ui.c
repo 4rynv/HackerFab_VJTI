@@ -11,6 +11,9 @@
 #include "esp_log.h"
 
 
+static const char *TAG = "lvgl";
+
+
 static const lv_img_dsc_t my_image = {
     .header.always_zero = 0,
     .header.w = 100,
@@ -125,6 +128,8 @@ static const lv_img_dsc_t my_image = {
     },
 };
 
+static int current_rpm = 0;
+
 // static lv_obj_t *meter;
 static lv_obj_t * btn1;
 static lv_obj_t * btn2;
@@ -134,50 +139,74 @@ static lv_obj_t * btnminus;
 static lv_obj_t * btn2plus;
 static lv_obj_t * btn2minus;
 static lv_obj_t * splash_screen;
+static lv_obj_t * rpm_label;
+static lv_obj_t * current_rpm_label;
+static lv_obj_t * rpm_value_label;
 static lv_disp_rot_t rotation = LV_DISP_ROT_90;
+
 
 // static void set_value(void *indic, int32_t v)
 // {   
 //     lv_meter_set_indicator_end_value(meter, indic, v);
 
 // }
-
+static void update_rpm_display(void)
+{
+    char rpm_text[20];
+    snprintf(rpm_text, sizeof(rpm_text), "%d", current_rpm);
+    lv_label_set_text(rpm_value_label, rpm_text);
+}
 // Callback for Start button
 static void start_btn_cb(lv_event_t * e)
 {
     printf("Start\n");  
+    ESP_LOGI(TAG,"Pressed Start");
 }
 
 // Callback for Stop button
 static void stop_btn_cb(lv_event_t * e)
 {
     printf("Stop\n"); 
+    ESP_LOGI(TAG,"Pressed Stop");
 }
 
 // Callback for Arm button
 static void arm_btn_cb(lv_event_t * e)
 {
     printf("Arm\n");  
+    ESP_LOGI(TAG,"Pressed Arm");
 }
 
 static void plus_btn_cb(lv_event_t * e)
 {
-    printf("+\n");  
+    current_rpm += 100;
+    update_rpm_display();
+    printf("RPM: %d\n",current_rpm);
+    ESP_LOGI(TAG,"Pressed +"); 
 }
 
 static void minus_btn_cb(lv_event_t * e)
 {
-    printf("-\n");  
+    current_rpm -= 100;
+    update_rpm_display();
+    printf("RPM: %d\n",current_rpm);  
+    ESP_LOGI(TAG,"Pressed -");
 }
 
 static void plus2_btn_cb(lv_event_t * e)
 {
-    printf("-\n");  
+    current_rpm += 1000;
+    update_rpm_display();
+    printf("RPM: %d\n",current_rpm);   
+    ESP_LOGI(TAG,"Pressed ++");
 }
 
 static void minus2_btn_cb(lv_event_t * e)
 {
-    printf("-\n");  
+    current_rpm -= 1000;
+    update_rpm_display();
+    printf("RPM: %d\n",current_rpm);   
+    ESP_LOGI(TAG,"Pressed --");
 }
 // static void rotate_btn_cb(lv_event_t * e)
 // {
@@ -226,7 +255,21 @@ static void create_main_ui(lv_disp_t *disp)
 
     // /*Add a needle line indicator*/
     // indic = lv_meter_add_needle_line(meter, scale, 4, lv_palette_main(LV_PALETTE_GREY), -10);
+    // Create "SET RPM:" label
+    rpm_label = lv_label_create(scr);
+    lv_label_set_text_static(rpm_label, "SET RPM:");
+    lv_obj_align(rpm_label, LV_ALIGN_BOTTOM_LEFT, 20, -200);
 
+    current_rpm_label = lv_label_create(scr);
+    lv_label_set_text_static(current_rpm_label, "CURRENT RPM:");
+    lv_obj_align(current_rpm_label,LV_ALIGN_BOTTOM_LEFT, 20, -120);
+
+// Create RPM value display
+    rpm_value_label = lv_label_create(scr);
+    lv_label_set_text(rpm_value_label, "0");
+    lv_obj_align(rpm_value_label, LV_ALIGN_BOTTOM_LEFT, 145, -160);
+    lv_obj_set_style_text_font(rpm_value_label, &lv_font_montserrat_32, 0);
+    lv_obj_set_style_text_color(rpm_value_label, lv_palette_main(LV_PALETTE_BLUE), 0);
    
     btn1 = lv_btn_create(scr);
     lv_obj_t * lbl1 = lv_label_create(btn1);
@@ -251,26 +294,28 @@ static void create_main_ui(lv_disp_t *disp)
     btnplus = lv_btn_create(scr);
     lv_obj_t *lblplus = lv_label_create(btnplus);
     lv_label_set_text_static(lblplus,"+");
-    lv_obj_align(btnplus, LV_ALIGN_BOTTOM_LEFT, 220, -200);
+    lv_obj_align(btnplus, LV_ALIGN_BOTTOM_LEFT, 220, -160);
     lv_obj_add_event_cb(btnplus, plus_btn_cb, LV_EVENT_CLICKED, NULL); 
 
     btnminus = lv_btn_create(scr);
     lv_obj_t *lblminus = lv_label_create(btnminus);
     lv_label_set_text_static(lblminus, "-");
-    lv_obj_align(btnminus, LV_ALIGN_BOTTOM_LEFT,  60, -200);
+    lv_obj_align(btnminus, LV_ALIGN_BOTTOM_LEFT,  60, -160);
     lv_obj_add_event_cb(btnminus, minus_btn_cb, LV_EVENT_CLICKED, NULL);  
 
     btn2plus = lv_btn_create(scr);
     lv_obj_t *lbl2plus = lv_label_create(btn2plus);
     lv_label_set_text_static(lbl2plus, "++");
-    lv_obj_align(btn2plus, LV_ALIGN_BOTTOM_LEFT,  260, -200);
+    lv_obj_align(btn2plus, LV_ALIGN_BOTTOM_LEFT,  260, -160);
     lv_obj_add_event_cb(btn2plus, plus2_btn_cb, LV_EVENT_CLICKED, NULL);
 
     btn2minus = lv_btn_create(scr);
     lv_obj_t *lbl2minus = lv_label_create(btn2minus);
     lv_label_set_text_static(lbl2minus, "--");
-    lv_obj_align(btn2minus, LV_ALIGN_BOTTOM_LEFT,  20, -200);
+    lv_obj_align(btn2minus, LV_ALIGN_BOTTOM_LEFT,  20, -160);
     lv_obj_add_event_cb(btn2minus, minus2_btn_cb, LV_EVENT_CLICKED, NULL);
+
+
     
 
     /*Create an animation to set the value*/

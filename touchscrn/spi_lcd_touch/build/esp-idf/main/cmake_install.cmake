@@ -1,4 +1,4 @@
-# Install script for directory: C:/touchscrn/spi_lcd_touch/main
+# Install script for directory: C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

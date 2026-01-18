@@ -1,2 +1,2 @@
-source C:/touchscrn/spi_lcd_touch/build/gdbinit/symbols
-source C:/touchscrn/spi_lcd_touch/build/gdbinit/connect
+source C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/gdbinit/symbols
+source C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/gdbinit/connect

@@ -23,8 +23,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file C:/touchscrn/spi_lcd_touch/build/bootloader/bootloader.elf
+    add-symbol-file C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file C:/touchscrn/spi_lcd_touch/build/spi_lcd_touch.elf
+file C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/spi_lcd_touch.elf

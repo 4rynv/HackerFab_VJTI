@@ -5344,6 +5344,16 @@
                                 "range": null,
                                 "title": "STMPE610",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice EXAMPLE_LCD_TOUCH_CONTROLLER>",
+                                "help": "Touch controller XPT2046 connected via SPI",
+                                "id": "EXAMPLE_LCD_TOUCH_CONTROLLER_XPT2046",
+                                "name": "EXAMPLE_LCD_TOUCH_CONTROLLER_XPT2046",
+                                "range": null,
+                                "title": "XPT2046",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": "EXAMPLE_LCD_TOUCH_ENABLED",
@@ -5366,6 +5376,64 @@
         "depends_on": null,
         "id": "example-configuration",
         "title": "Example Configuration",
+        "type": "menu"
+    },
+    {
+        "children": [
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Touch pressure less than this value will be discarded as invalid\nand no touch position data collected.",
+                "id": "XPT2046_Z_THRESHOLD",
+                "name": "XPT2046_Z_THRESHOLD",
+                "range": null,
+                "title": "Minimum Z pressure threshold",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Also called Full Power Mode.\nEnable this to configure the XPT2046 to output low on the PENIRQ output\nif a touch is detected.\nThis mode uses more power when enabled.\nNote that this signal goes low normally when a read is active.",
+                "id": "XPT2046_INTERRUPT_MODE",
+                "name": "XPT2046_INTERRUPT_MODE",
+                "range": null,
+                "title": "Enable Interrupt (PENIRQ) output",
+                "type": "bool"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Enable this to keep the internal Vref enabled between conversions.\nThis uses slightly more power, but requires fewer transactions when\nreading the battery voltage, aux voltage and temperature.",
+                "id": "XPT2046_VREF_ON_MODE",
+                "name": "XPT2046_VREF_ON_MODE",
+                "range": null,
+                "title": "Keep internal Vref enabled",
+                "type": "bool"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "When this option is enabled the raw ADC values will be converted from\n0-4096 to 0-{screen width} or 0-{screen height}.\nWhen this option is disabled the process_coordinates method will need\nto be used to convert the raw ADC values into a screen coordinate.",
+                "id": "XPT2046_CONVERT_ADC_TO_COORDS",
+                "name": "XPT2046_CONVERT_ADC_TO_COORDS",
+                "range": null,
+                "title": "Convert touch coordinates to screen coordinates",
+                "type": "bool"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "By enabling this option the XPT2046 driver will lock the touch position\ndata structures when reading values from the XPT2046 and when reading\nposition data via API.\nWARNING: enabling this option may result in unintended crashes.",
+                "id": "XPT2046_ENABLE_LOCKING",
+                "name": "XPT2046_ENABLE_LOCKING",
+                "range": null,
+                "title": "Enable data structure locking",
+                "type": "bool"
+            }
+        ],
+        "depends_on": null,
+        "id": "xpt2046",
+        "title": "XPT2046",
         "type": "menu"
     },
     {

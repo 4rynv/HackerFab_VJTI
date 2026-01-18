@@ -1,4 +1,4 @@
-# Install script for directory: C:/touchscrn/spi_lcd_touch/managed_components/lvgl__lvgl
+# Install script for directory: C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/managed_components/lvgl__lvgl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -10,18 +10,18 @@ if(NOT EXISTS "C:/Espressif/frameworks/esp-idf-v5.2.6/components/bootloader/subp
   file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.2.6/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/touchscrn/spi_lcd_touch/build/bootloader"
-  "C:/touchscrn/spi_lcd_touch/build/bootloader-prefix"
-  "C:/touchscrn/spi_lcd_touch/build/bootloader-prefix/tmp"
-  "C:/touchscrn/spi_lcd_touch/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/touchscrn/spi_lcd_touch/build/bootloader-prefix/src"
-  "C:/touchscrn/spi_lcd_touch/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader"
+  "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader-prefix"
+  "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader-prefix/tmp"
+  "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader-prefix/src"
+  "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/touchscrn/spi_lcd_touch/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/touchscrn/spi_lcd_touch/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()
