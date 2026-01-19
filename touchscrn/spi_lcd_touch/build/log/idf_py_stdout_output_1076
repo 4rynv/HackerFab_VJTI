@@ -1,0 +1,216 @@
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40383e8a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x151c
+load:0x403cc710,len:0xbd0
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.2.6-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan 18 2026 20:22:31[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (29) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (47) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (60) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (73) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=1b148h (110920) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=0002b170 vaddr=3fc8e600 size=04ea8h ( 20136) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=4d568h (316776) map[0m
+[0;32mI (155) esp_image: segment 3: paddr=0007d590 vaddr=3fc934a8 size=013f4h (  5108) load[0m
+[0;32mI (156) esp_image: segment 4: paddr=0007e98c vaddr=40380000 size=0e408h ( 58376) load[0m
+[0;32mI (175) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (175) boot: Disabling RNG early entropy source...[0m
+[0;32mI (185) cpu_start: Unicore app[0m
+[0;32mI (193) cpu_start: Pro cpu start user code[0m
+[0;32mI (194) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (194) cpu_start: Application information:[0m
+[0;32mI (194) cpu_start: Project name:     spi_lcd_touch[0m
+[0;32mI (198) cpu_start: App version:      64a73ef-dirty[0m
+[0;32mI (203) cpu_start: Compile time:     Jan 19 2026 13:32:29[0m
+[0;32mI (208) cpu_start: ELF file SHA256:  6c948aba2...[0m
+[0;32mI (212) cpu_start: ESP-IDF:          v5.2.6-dirty[0m
+[0;32mI (217) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (220) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (224) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (228) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (234) heap_init: At 3FC9DCC0 len 00022340 (136 KiB): RAM[0m
+[0;32mI (240) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (246) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (252) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (276) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (282) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (288) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (288) example: Turn off LCD backlight[0m
+[0;32mI (288) gpio: GPIO[3]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (298) example: Initialize SPI bus[0m
+[0;32mI (308) example: Install panel IO[0m
+[0;32mI (308) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (318) example: Install ILI9341 panel driver[0m
+[0;32mI (318) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (328) ili9341: LCD panel create success, version: 1.2.0[0m
+[0;32mI (458) example: Initialize touch controller XPT2046[0m
+[0;32mI (458) example: Turn on LCD backlight[0m
+[0;32mI (458) example: Initialize LVGL library[0m
+[0;32mI (458) example: Register display driver to LVGL[0m
+[0;32mI (458) example: Install LVGL tick timer[0m
+[0;32mI (468) example: Create LVGL task[0m
+[0;32mI (468) example: Starting LVGL task[0m
+[0;32mI (528) example: Display LVGL Meter Widget[0m
+[0;32mI (538) main_task: Returned from app_main()[0m
+RPM: 1000
+[0;32mI (5248) lvgl: Pressed ++[0m
+RPM: 2000
+[0;32mI (5518) lvgl: Pressed ++[0m
+RPM: 1000
+[0;32mI (8128) lvgl: Pressed --[0m
+RPM: 0
+[0;32mI (8398) lvgl: Pressed --[0m
+RPM: 100
+[0;32mI (9808) lvgl: Pressed +[0m
+RPM: 1100
+[0;32mI (9928) lvgl: Pressed ++[0m
+RPM: 100
+[0;32mI (10648) lvgl: Pressed --[0m
+RPM: -900
+[0;32mI (11008) lvgl: Pressed --[0m
+RPM: -1900
+[0;32mI (11548) lvgl: Pressed --[0m
+RPM: -2900
+[0;32mI (12358) lvgl: Pressed --[0m
+Arm
+[0;32mI (16978) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (17938) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (20368) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (21028) lvgl: Pressed Arm[0m
+RPM: -1900
+[0;32mI (22288) lvgl: Pressed ++[0m
+RPM: -2900
+[0;32mI (22828) lvgl: Pressed --[0m
+RPM: -1900
+[0;32mI (23548) lvgl: Pressed ++[0m
+RPM: -900
+[0;32mI (23938) lvgl: Pressed ++[0m
+RPM: 100
+[0;32mI (24298) lvgl: Pressed ++[0m
+RPM: 200
+[0;32mI (24688) lvgl: Pressed +[0m
+RPM: 1200
+[0;32mI (25378) lvgl: Pressed ++[0m
+RPM: 2200
+[0;32mI (25858) lvgl: Pressed ++[0m
+RPM: 3200
+[0;32mI (28228) lvgl: Pressed ++[0m
+RPM: 4200
+[0;32mI (28588) lvgl: Pressed ++[0m
+Arm
+[0;32mI (29338) lvgl: Pressed Arm[0m
+Start
+[0;32mI (30238) lvgl: Pressed Start[0m
+Start
+[0;32mI (30448) lvgl: Pressed Start[0m
+Start
+[0;32mI (30628) lvgl: Pressed Start[0m
+RPM: 3200
+[0;32mI (53098) lvgl: Pressed --[0m
+RPM: 2200
+[0;32mI (53698) lvgl: Pressed --[0m
+RPM: 1200
+[0;32mI (54118) lvgl: Pressed --[0m
+RPM: 2200
+[0;32mI (54808) lvgl: Pressed ++[0m
+RPM: 3200
+[0;32mI (55498) lvgl: Pressed ++[0m
+RPM: 2200
+[0;32mI (56308) lvgl: Pressed --[0m
+RPM: 1200
+[0;32mI (56668) lvgl: Pressed --[0m
+RPM: 200
+[0;32mI (57328) lvgl: Pressed --[0m
+RPM: -800
+[0;32mI (57628) lvgl: Pressed --[0m
+Arm
+[0;32mI (95068) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (95318) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (95498) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (95678) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (95888) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (96098) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (96308) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (96518) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (96888) lvgl: Pressed Arm[0m
+Stop
+[0;32mI (97278) lvgl: Pressed Stop[0m
+Stop
+[0;32mI (98928) lvgl: Pressed Stop[0m
+Stop
+[0;32mI (99138) lvgl: Pressed Stop[0m
+Start
+[0;32mI (101418) lvgl: Pressed Start[0m
+RPM: -900
+[0;32mI (106488) lvgl: Pressed -[0m
+RPM: -800
+[0;32mI (109578) lvgl: Pressed +[0m
+RPM: 200
+[0;32mI (110988) lvgl: Pressed ++[0m
+RPM: 100
+[0;32mI (114288) lvgl: Pressed -[0m
+RPM: 0
+[0;32mI (116028) lvgl: Pressed -[0m
+RPM: 100
+[0;32mI (122388) lvgl: Pressed +[0m
+RPM: 200
+[0;32mI (127248) lvgl: Pressed +[0m
+Arm
+[0;32mI (132498) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (132858) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (133068) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (133278) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (133608) lvgl: Pressed Arm[0m
+Arm
+[0;32mI (133818) lvgl: Pressed Arm[0m
+RPM: -800
+[0;32mI (135078) lvgl: Pressed --[0m
+RPM: -700
+[0;32mI (139608) lvgl: Pressed +[0m
+RPM: -600
+[0;32mI (140028) lvgl: Pressed +[0m
+RPM: -500
+[0;32mI (140418) lvgl: Pressed +[0m
+RPM: -400
+[0;32mI (140868) lvgl: Pressed +[0m
+RPM: -300
+[0;32mI (141258) lvgl: Pressed +[0m
+RPM: -200
+[0;32mI (141648) lvgl: Pressed +[0m
+RPM: -100
+[0;32mI (142038) lvgl: Pressed +[0m
+RPM: 0
+[0;32mI (142428) lvgl: Pressed +[0m

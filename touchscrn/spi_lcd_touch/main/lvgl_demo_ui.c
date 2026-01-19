@@ -267,7 +267,7 @@ static void create_main_ui(lv_disp_t *disp)
 // Create RPM value display
     rpm_value_label = lv_label_create(scr);
     lv_label_set_text(rpm_value_label, "0");
-    lv_obj_align(rpm_value_label, LV_ALIGN_BOTTOM_LEFT, 145, -160);
+    lv_obj_align(rpm_value_label, LV_ALIGN_BOTTOM_LEFT, 120, -160);
     lv_obj_set_style_text_font(rpm_value_label, &lv_font_montserrat_32, 0);
     lv_obj_set_style_text_color(rpm_value_label, lv_palette_main(LV_PALETTE_BLUE), 0);
    
@@ -349,7 +349,7 @@ static void splash_timer_cb(lv_timer_t * timer)
 void example_lvgl_demo_ui(lv_disp_t *disp)
 {
     lv_obj_t *scr = lv_disp_get_scr_act(disp);
-    lv_disp_set_rotation(disp, LV_DISP_ROT_90);
+    lv_disp_set_rotation(disp,  LV_DISP_ROT_90);
     
     // Create splash screen with background
     splash_screen = lv_obj_create(scr);

@@ -1,0 +1,6 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- esp-idf-monitor 1.8.0 on \\.\COM3 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x42014cf0: [0;33mdraw_buf_flush[0m[0m at [0;32mC:/HackerFab_VJTI/touchscrn/spi_lcd_touch/managed_components/lvgl__lvgl/src/core/lv_refr.c[0m[0m:[1;31m1284[0m
+[0m

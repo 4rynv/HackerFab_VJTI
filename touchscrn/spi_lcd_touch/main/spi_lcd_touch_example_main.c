@@ -169,8 +169,8 @@ static bool example_lvgl_touch_cb(lv_indev_drv_t * drv, lv_indev_data_t * data)
     //          touchpad_x[0], touchpad_y[0]);
 
     if (touchpad_pressed && touchpad_cnt > 0) {
-        data->point.x = touchpad_x[0];
-        data->point.y = touchpad_y[0];
+        data->point.x =  touchpad_x[0];
+        data->point.y = EXAMPLE_LCD_V_RES -  touchpad_y[0] + 1;
         data->state = LV_INDEV_STATE_PRESSED;
     } else {
         data->state = LV_INDEV_STATE_RELEASED;
@@ -299,8 +299,8 @@ void app_main(void)
         .int_gpio_num = -1,
         .flags = {
             .swap_xy = 0,
-            .mirror_x = 0,
-            .mirror_y = 0,
+            .mirror_x = 1,
+            .mirror_y = 1,
         },
     };
 

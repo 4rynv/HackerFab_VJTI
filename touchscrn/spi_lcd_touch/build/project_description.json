@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "spi_lcd_touch",
-    "project_version":    "670355c-dirty",
+    "project_version":    "64a73ef-dirty",
     "project_path":       "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.2.6",
     "build_dir":          "C:/HackerFab_VJTI/touchscrn/spi_lcd_touch/build",
