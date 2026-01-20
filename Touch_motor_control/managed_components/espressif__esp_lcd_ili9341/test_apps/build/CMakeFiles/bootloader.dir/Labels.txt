@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/CMakeFiles/bootloader
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/CMakeFiles/bootloader.rule
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/CMakeFiles/bootloader-complete.rule
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/touchscrn/spi_lcd_touch/managed_components/espressif__esp_lcd_ili9341/test_apps/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

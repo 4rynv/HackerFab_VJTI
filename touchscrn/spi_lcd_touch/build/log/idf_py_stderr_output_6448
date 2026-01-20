@@ -1,8 +1,0 @@
-[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
-[0;33m--- Using \\.\COM3 instead...[0m
-[0;33m--- esp-idf-monitor 1.8.0 on \\.\COM3 115200[0m
-[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
-[0m--- 0x4200db86: [0;33mlv_obj_event[0m[0m at [0;32mC:/HackerFab_VJTI/touchscrn/spi_lcd_touch/managed_components/lvgl__lvgl/src/core/lv_obj.c[0m[0m:[1;31m876[0m
-[1;31m--- Error: ClearCommError failed (PermissionError(13, 'The device does not recognize the command.', None, 22))[0m
-[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
-[0m
